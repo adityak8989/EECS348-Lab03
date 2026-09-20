@@ -1,27 +1,75 @@
 <html>
         <head>
                 <style>
-                        body{    background-color: yellow;
+                        body{    background-color: rgb(150, 225, 196);
                                 font-size: 33px;
                                 
                                 text-align: center;
                         }
 			p{
 				color: rgb(13, 45, 300);
+                                border: 4px solid black;
 			}
                 </style>
 
         </head>
         <body>
-		<label for "Red">R</label>
-		<input type="number" id"Red" value="">
-		<label for "green">G</label>
-		<input type="number" id"green" value="">
-		<label for "Blue">B</label>
-		<input type="number" id"Blue" value="">
+                For text color<br>
+		<label for ="Red">R</label>
+		<input type="number" id="Red" min="0" max="255" value="">
+		<label for ="green">G</label>
+		<input type="number" id="green" min="0" max="255" value="">
+		<label for ="Blue">B</label>
+		<input type="number" id= "Blue" min="0" max="255" value="">
+                <button onclick="changeColor()">Change Color</button>
+                <br>
+                For border color
+                <br>
+                
+                <label for="borderRed">R</label>
+                <input type="number" id="borderRed" min="0" max="255" value="0">
+                <label for="borderGreen">G</label>
+                <input type="number" id="borderGreen" min="0" max="255" value="0">
+                <label for="borderBlue">B</label>
+                <input type="number" id="borderBlue" min="0" max="255" value="0">
+                <button onclick="changeBorderColor()">Change Border Color</button>
+
+                
+                <br>
+                <br>
+                For border
+                <br>
+                <label for ="Border">Width (px)</label>
+                <input type="number" id= "Border" min="0" value="">
+                <button onclick="changeBorder()">Adjust Border </button>
+                <script>
 
 
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                function changeBorderColor() {
+                var bR = document.getElementById("borderRed").value;
+                var bG = document.getElementById("borderGreen").value;
+                var bB = document.getElementById("borderBlue").value;
+
+                document.getElementById("Paragraph").style.borderColor = "rgb(" + bR + "," + bG + "," + bB + ")";
+                }
+
+                function changeBorder() {
+                var borderVal = document.getElementById("Border").value;
+                document.getElementById("Paragraph").style.borderWidth = borderVal + "px";
+}
+
+
+                function changeColor() {
+                var redValue = document.getElementById("Red").value;
+                var greenValue = document.getElementById("green").value;
+                var blueValue = document.getElementById("Blue").value;
+
+                document.getElementById("Paragraph").style.color = "rgb(" + redValue + "," + greenValue + "," + blueValue + ")";
+            }
+        </script>
+
+
+		<p id="Paragraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. </p>
 
         </body>
 </html>

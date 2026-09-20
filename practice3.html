@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Password Varify site</title>
+</head>
+<body>
+
+    <h2>Password Verify site</h2>
+
+    <label for="pass1">Enter Password:</label><br>
+    <input type="password" id="pass1"><br><br>
+
+    <label for="pass2">Re-enter Password:</label><br>
+    <input type="password" id="pass2"><br><br>
+
+    <button onclick="password()">Validate</button>
+
+    <script>
+            function password(){
+                var pass1 = document.getElementById("pass1").value;
+                var pass2 = document.getElementById("pass2").value;
+
+                if (pass1.length < 8 || pass2.length < 8) {
+                        alert("Passwords must be at least 8 characters long.");
+                    } else if (pass1 !== pass2) {
+                        alert("The passwords do not match.");
+                    } else {
+                        alert("The passwords match!");
+            }
+            }
+        
+
+
+    </script>
+
+</body>
+</html>
